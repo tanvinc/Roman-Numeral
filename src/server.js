@@ -6,7 +6,7 @@ const port=8080;
 const log=require('./logger');
 
 /**
- * Handling GET requests on the base path
+ * Handling GET requests for roman numerals
  */
 app.get('/romannumeral', async function(req, res) {
 
