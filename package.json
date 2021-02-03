@@ -1,0 +1,21 @@
+{
+    "name": "roman-numeral",
+    "version": "1.0.0",
+    "description": "Service that generates roman numerals",
+    "scripts": {
+        "lint": "./node_modules/.bin/eslint .",
+        "lint-fix": "./node_modules/.bin/eslint . --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tanvinc/Roman-Numeral/"
+    },
+    "author": "Tanvi Nachane",
+    "dependencies": {
+        "bunyan": "^1.8.15",
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "eslint": "^7.19.0"
+    }
+}
