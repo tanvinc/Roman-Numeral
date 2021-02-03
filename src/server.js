@@ -14,10 +14,15 @@ app.get('/romannumeral', async function (req, res) {
     
     let num=req.query.query; // fetching the value from the query parameter
 
-    res.status(200).send({
-        input: num,
-        message: 'Hello'
-    });
+    if(num>=1 && num<=3999){ // validating if the query parameter is within the valid range
+        res.status(200).send({
+            input: num,
+            message: 'Hello'
+        });
+    } else{
+        res.status(422).send('Integer out of bounds');
+        log.error('The input %d is out of bounds', num);
+    }
 });
 
 
