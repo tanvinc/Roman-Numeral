@@ -8,7 +8,7 @@ const log=require('./logger');
 /**
  * Handling GET requests on the base path
  */
-app.get('/', async function(req, res) {
+app.get('/romannumeral', async function(req, res) {
 
     log.info('Request received');
 
