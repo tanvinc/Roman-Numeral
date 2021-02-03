@@ -8,11 +8,11 @@ const log=require('./logger');
 /**
  * Handling GET requests for roman numerals
  */
-app.get('/romannumeral', async function(req, res) {
+app.get('/romannumeral', async function (req, res) {
 
     log.info('Request received');
     
-    let num=req.query.query;
+    let num=req.query.query; // fetching the value from the query parameter
 
     res.status(200).send({
         input: num,
