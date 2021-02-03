@@ -11,9 +11,11 @@ const log=require('./logger');
 app.get('/romannumeral', async function(req, res) {
 
     log.info('Request received');
+    
+    let num=req.query.query;
 
-    res.send({
-        status: 200,
+    res.status(200).send({
+        input: num,
         message: 'Hello'
     });
 });
