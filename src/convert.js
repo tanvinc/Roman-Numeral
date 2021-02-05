@@ -2,6 +2,7 @@
 
 const nums = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
 const sym = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+const log = require('./logger');
 
 /**
  * 
@@ -28,7 +29,8 @@ async function convert (number){
         }
         return ans;
     } catch(e){
-        throw new Error('Unable to process a Roman Numeral for the input')
+        log.error('Unable to process a Roman Numeral for the input ' + e);
+        throw new Error('Unable to process a Roman Numeral for the input');
     }
     
 }
