@@ -20,12 +20,12 @@ describe('testing function', () =>{
         ans.should.equal('MMMMMMMMM');
     });
 
-    it('should return an empty string', async () => {
+    it('should return an empty string for a negative number', async () => {
         ans=await app(-8000);
         ans.should.equal('');
     });
 
-    it('should return an error', async () => {
+    it('should return an error for MAX_VALUE', async () => {
         const x = Number.MAX_VALUE;
         let err=new Error('Unable to process a Roman Numeral for the input');
         try{
@@ -35,7 +35,7 @@ describe('testing function', () =>{
         }  
     });
 
-    it('should return an error', async () => {
+    it('should return an error for MIN_VALUE', async () => {
         const y = Number.MIN_VALUE;
         let err=new Error('Unable to process a Roman Numeral for the input');
         try{
