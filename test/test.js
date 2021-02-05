@@ -43,7 +43,5 @@ describe('testing function', () =>{
         } catch(e){
             e.should.equal(err);
         }  
-    });
-
-    
+    }); 
 });
