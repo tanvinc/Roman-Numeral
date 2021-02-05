@@ -8,7 +8,7 @@ const chai=require('chai');
 const should=chai.should();
 
 // eslint-disable-next-line no-undef
-describe('testing function', () =>{
+describe('testing the function for generating roman numerals', () =>{
     let ans;
     it('should return a valid roman numeral', async () => {
         ans=await app(357);
