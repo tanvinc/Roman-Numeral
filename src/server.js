@@ -4,6 +4,7 @@ const express=require('express');
 const app=express();
 const port=8080;
 const log=require('./logger');
+const converter=require('./convert');
 
 /**
  * Handling GET requests for roman numerals
@@ -16,9 +17,11 @@ app.get('/romannumeral', async function (req, res) {
 
     if(num>=1 && num<=3999){ // validating if the query parameter is within the valid range
 
+        let output= await converter(num);
+
         res.status(200).send({
             input: num,
-            message: 'output'
+            output: output
         });
 
     } else{
