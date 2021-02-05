@@ -15,7 +15,7 @@ describe('testing function', () =>{
         ans.should.equal('CCCLVII');
     });
 
-    it('should return an invalid roman numeral', async () => {
+    it('should return an incorrect roman numeral', async () => {
         ans=await app(9000);
         ans.should.equal('MMMMMMMMM');
     });
