@@ -76,5 +76,7 @@ While this service includes unit tests under the /src/test folder, end-to-end te
   - Number of requests received - This will help evaluate the overall traffic
   - Number of successfully processed requests
   - Number of failed requests
-These two metrics above will help to gauge potential down time on the service, eg. if the service receives 10,000 requests per min and there have been 0 successes or failures over 5-15 mins it can be a good trigger for paging on-call support
+  
+  These two metrics above will help to gauge potential down time on the service, eg. if the service receives 10,000 requests per min and there have been 0 successes or failures over 5-15 mins it can be a good trigger for paging on-call support
+  
   - Types of response codes (this is to fetch counts per response code) - This can help to analyze the overall statistics on various requests
