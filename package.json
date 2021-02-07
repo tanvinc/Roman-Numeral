@@ -15,6 +15,7 @@
     "author": "Tanvi Nachane",
     "dependencies": {
         "bunyan": "^1.8.15",
+        "datadog-metrics": "^0.8.2",
         "dotenv": "^8.2.0",
         "express": "^4.17.1"
     },
