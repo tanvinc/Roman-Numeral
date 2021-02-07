@@ -36,7 +36,7 @@ app.get('/romannumeral', async function (req, res) {
             res.status(422).send({error: 'Request parameters cannot be processed'}); // failed to process requests with multiple query parameters
             log.error('More than one parameter found');
         }
-    } catch(e) {
+    } catch(e) { // block to catch unexpected errors in processing
         res.status(500).send({error: 'Unexpected error'});
         log.error('Unexpected error %d', e);
     }
