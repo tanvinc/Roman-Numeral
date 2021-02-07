@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Service that generates roman numerals",
     "scripts": {
-        "lint": "./node_modules/.bin/eslint .",
+        "lint": "./node_modules/.bin/eslint ./src",
         "lint-fix": "./node_modules/.bin/eslint . --fix",
         "start": "node -r dotenv/config src/server.js",
         "test": "mocha src/test/*.js"
