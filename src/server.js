@@ -11,22 +11,34 @@ const converter=require('./convert');
  */
 app.get('/romannumeral', async function (req, res) {
 
-    log.info('Request received');
-    
-    let num=req.query.query; // fetching the value from the query parameter
+    try{
 
-    if(num>=1 && num<=3999){ // validating if the query parameter is within the valid range
+        log.info('Request received');
+        
+        if(Object.keys(req.query).length==1){ // checking if there are more than one query parameters
 
-        let output= await converter(num);
+            let num=req.query.query; // fetching the value from the query parameter
 
-        res.status(200).send({
-            input: num,
-            output: output
-        });
+            if(num>=1 && num<=3999){ // validating if the query parameter is within the valid range
 
-    } else{
-        res.status(422).send({error: 'Input out of bounds or cannot be processed'});
-        log.error('The input %d is out of bounds', num);
+                let output= await converter(num); // valid integer sent for further processing
+
+                res.status(200).send({ //successfully processed request
+                    input: num,
+                    output: output
+                });
+
+            } else{
+                res.status(422).send({error: 'Input out of bounds or cannot be processed'}); // fails to process negative integers, integers greater than 3999 or less than 1 and alphabetic or special character inputs
+                log.error('The input %d is out of bounds', num);
+            }
+        } else{
+            res.status(422).send({error: 'Request parameters cannot be processed'}); // failed to process requests with multiple query parameters
+            log.error('More than one parameter found');
+        }
+    } catch(e) {
+        res.status(500).send({error: 'Unexpected error'});
+        log.error('Unexpected error %d', e);
     }
 });
 
