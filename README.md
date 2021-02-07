@@ -47,24 +47,24 @@ In order to run the project locally, follow these steps:
     - DATADOG_API_KEY : Your datadog API key can be obtained [here](https://app.datadoghq.com/account/settings#api) under API Keys
     - PORT : Can be any value, in the current context it would be 8080
     - ENV : The environment in which your service is running (values can arbitrary strings eg. prod, dev, test, etc.)
-- Run `npm install` in the project's directory or run the following commands:
+- Run __`npm install`__ in the project's directory or run the following commands:
     - npm install bunyan
     - npm install dotenv
     - npm install express
     - npm install datadog-metrics
-- In order check for linting errors run `npm run lint`. to quickly fix msot of those errors run `npm run lint-fix`
-- In order to run the unit tests run `npm test`
-- Finally run `npm start` to run the service locally
+- In order check for linting errors run __`npm run lint`__. to quickly fix msot of those errors run __`npm run lint-fix`__
+- In order to run the unit tests run __`npm test`__
+- Finally run __`npm start`__ to run the service locally
 - Your server is ready to receive requests on http://localhost:8080/romannumeral
 
 #### Building the container
 In order to build this project, after cloning the repository, follow these steps:
 - Add your API to the variable the `DATADOG_API_KEY=<YOUR_API_KEY>` or pass it in from a secret file to keep it obfuscated
-- Add the value of the variable `ENV=<YOUR_ENV>` to specify the enviornment your container will run in
-- If you want to avoid the first two steps entirely, add a .env file as described in the steps to run locally above and change the `COPY src ./src` command on the Dockerfile to `COPY . ./`
-- Once the env variables are set up, run `docker build -t <image_name_tag> Roman-Numeral/` from one directory level above the cloned repository
+- Add the value of the variable `ENV=<YOUR_ENV>` to specify the environment your container will run in
+- If you want to avoid the first two steps entirely, add a **`.env`** file as described in the steps to run this service locally above and change the `COPY src ./src` command on the Dockerfile to `COPY . ./`
+- Once the env variables are set up, run __`docker build -t <image_name_tag> Roman-Numeral/`__ from one directory level above the cloned repository
 - The docker build takes care of lint check and unit tests. If any breaking changes are made to the project in the future, the unit tests will fail and so will the image build, if the functionality doesn't work as expected.
-- Finally when the image is built, run `docker run -p 8080:8080 <image_name_tag>` to start your container
+- Finally when the image is built, run __`docker run -p 8080:8080 <image_name_tag>`__ to start your container
 - Your container is ready to receive requests on http://localhost:8080/romannumeral
 
 #### Testing the service
