@@ -7,13 +7,13 @@ It follows the Standard representation of the Roman Numerals described [here](ht
 5 --> V
 9 --> IX (10 - 1)
 10 --> X
-40 --> XL
+40 --> XL (50 - 10)
 50 --> L
-90 --> XC
+90 --> XC (100 - 90)
 100 --> C
 400 --> CD (500 - 100)
 500 --> D
-900 --> CM
+900 --> CM (1000 - 100)
 1000 --> M
 ```
 
@@ -78,4 +78,3 @@ While this service includes unit tests under the /src/test folder, end-to-end te
   - Number of failed requests
   These two metrics above will help to gauge potential down time on the service, eg. if the service receives 10,000 requests per min and there have been 0 successes or failures over 5-15 mins it can be a good trigger for paging on-call support
   - Types of response codes (this is to fetch counts per response code) - This can help to analyze the overall statistics on various requests
-  
