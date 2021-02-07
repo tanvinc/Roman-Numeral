@@ -40,10 +40,10 @@ This service uses the following external libraries:
 
 #### Running locally
 In order to run the project locally, follow these steps:
-- Clone this repository
-  The source code of this project is under the /src directory. 
-  The /src/test directories has a file test.js that contains all the unit tests for the convert.js module.
-- Create a .env file with the following variables at root level/ level similar to the Dockerfile:
+- Clone this repository.
+  The source code of this project is under the `/src` directory. 
+  The `/src/test` directories has a file `unit-tests.js` that contains all the unit tests for the convert.js module.
+- Create a **`.env`** file with the following variables at root level/ level similar to the Dockerfile:
     - DATADOG_API_KEY : Your datadog API key can be obtained [here](https://app.datadoghq.com/account/settings#api) under API Keys
     - PORT : Can be any value, in the current context it would be 8080
     - ENV : The environment in which your service is running (values can arbitrary strings eg. prod, dev, test, etc.)

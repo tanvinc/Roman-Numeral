@@ -22,7 +22,7 @@ app.get('/romannumeral', async function (req, res) {
     try{
 
         log.info('Request received');
-        metrics.increment('requests_received',  1, [`env:${env}`]);
+        metrics.increment('requests_received',  1, [`env:${env}`]); // increments the counter for the 'requests_received' metric with value 1 and tag 'env:<env_name>'. The tags will help to narrow down environment specific details
         
         if(Object.keys(req.query).length==1){ // checking if there are more than one query parameters
 
