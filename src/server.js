@@ -9,8 +9,6 @@ const metrics = require('datadog-metrics'); // the service uses a datadog agent 
 let env= process.env.ENV;
 metrics.init({ host: '127.0.0.1', prefix: 'roman-numeral.' }); // initializing metrics for localhost, prefixed with name of the service
 
-
-
 /**
  * Handling GET requests for roman numerals and generating metrics
  * Metrics being pushed to datadog:
