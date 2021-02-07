@@ -27,7 +27,7 @@ async function convert (number){
         let ans=''; // initializing output string
         for(let i in nums){ // worst case complexity is O(n) where n is the number of values in the array nums, which is 13 in the context
         
-            let value=nums[i]; // we could just use nums[i] &sym[i] in the code below, this is for better readability
+            let value=nums[i]; // we could just use nums[i] & sym[i] in the code below, this is for better readability
             let symbol=sym[i];
             
             if(ans=='' && number==value){ // breaks the loop if the given number is an exact value in the array to prevent unnecessary iterations

@@ -26,7 +26,7 @@ app.get('/romannumeral', async function (req, res) {
         
         if(Object.keys(req.query).length==1){ // checking if there are more than one query parameters
 
-            let num=req.query.query; // fetching the value from the query parameter
+            let num=req.query.query; // fetching the value from the query parameter - 'query'
 
             if(num>=1 && num<=3999){ // validating if the query parameter is within the valid range
 
