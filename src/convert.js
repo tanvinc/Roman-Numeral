@@ -1,14 +1,14 @@
 'use strict';
 /**
  * 
- * Following the Standard representation on Roman numerals in the cited document form the README.md file,
+ * Following the Standard representation on Roman numerals in the reference wiki document from the README.md file,
  * 1000 --> M
  * 100 --> C 
  * but 900 would be 1000 - 100 = CM
  * 
  * Simailarly, 500 --> D but 400 = 500 - 100 = CD
- * The arrays nums and sym record every such derivation of roman numeral obtained by subtraction and the original unique roman numerals for values like 100, 500, 1000
- * The array are ordered in descending order on purpose to facilitate division by the greatest divisor of all first.
+ * The arrays nums and sym record every such derivation of roman numerals obtained by subtraction and the original unique roman numerals for values like 100, 500, 1000 respectively.
+ * The arrays are ordered in descending order on purpose to facilitate division by the greatest divisor of all first.
  * This will help in deducing the roman representation accurately, faster.
  */
 const nums = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
