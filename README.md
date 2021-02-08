@@ -61,7 +61,7 @@ In order to run the project locally, follow these steps:
 In order to build this project, after cloning the repository, follow these steps:
 - Add your API to the variable the `DATADOG_API_KEY=<YOUR_API_KEY>` or pass it in from a secret file to keep it obfuscated
 - Add the value of the variable `ENV=<YOUR_ENV>` to specify the environment your container will run in
-- If you want to avoid the first two steps entirely, add a **`.env`** file as described in the steps to run this service locally above and change the `COPY src ./src` command on the Dockerfile to `COPY . ./`
+- **If you want to avoid the first two steps entirely, add a **`.env`** file as described in the steps to run this service locally above and change the `COPY src ./src` command on the Dockerfile to `COPY . ./`**
 - Once the env variables are set up, run __`docker build -t <image_name_tag> Roman-Numeral/`__ from one directory level above the cloned repository
 - The docker build takes care of lint check and unit tests. If any breaking changes are made to the project in the future, the unit tests will fail and so will the image build, if the functionality doesn't work as expected.
 - Finally when the image is built, run __`docker run -p 8080:8080 <image_name_tag>`__ to start your container
