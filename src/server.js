@@ -2,20 +2,20 @@
 
 const express=require('express');
 const app=express();
-const port=process.env.PORT;
+const port=process.env.PORT; //fetching port number from container environment
 const log=require('./logger');
 const converter=require('./convert');
 const metrics = require('datadog-metrics'); // the service uses a datadog agent configured using a datadog API key to push metrics to Datadog
-let env= process.env.ENV;
+let env= process.env.ENV; //fetching env variable for metric tags from container environment
 metrics.init({ host: '127.0.0.1', prefix: 'roman-numeral.' }); // initializing metrics for localhost, prefixed with name of the service
 
 /**
  * Handling GET requests for roman numerals and generating metrics
  * Metrics being pushed to datadog:
- *  - Number of requests received
- *  - Number of successfully processed requests
- *  - Number of failed requests
- *  - Types of response codes (this is to fetch counts per response code)
+ *  - Number of requests received (Counter)
+ *  - Number of successfully processed requests (Counter)
+ *  - Number of failed requests (Counter)
+ *  - Types of response codes (this is to fetch counts per response code) (Counter)
  */
 app.get('/romannumeral', async function (req, res) {
 

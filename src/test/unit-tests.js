@@ -17,7 +17,7 @@ describe('testing the function for generating roman numerals', () =>{
         ans.should.equal('CCCLVII');
     });
 
-    it('should return an incorrect roman numeral', async () => { // test for a valid integer but out of bounds. Ideally this should return an accurate representation, but roman numerals can only exist till 3999, so this test fetches an invalid answer
+    it('should return an incorrect roman numeral', async () => { // test for a valid integer but out of bounds. Ideally this should return an accurate representation, but the service can render roman numerals only till 3999, so this test fetches an invalid answer
         ans=await app(9000);
         ans.should.equal('MMMMMMMMM'); // this returns the additive representation of Roman Numeral, which is different from the standard representation based on which the convert module was designed
     });
